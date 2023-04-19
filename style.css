@@ -4,6 +4,16 @@
 /*==================== VARIABLES CSS ====================*/
 :root {
     /*========== Colors ==========*/
+    --background-color-dark: #0a081f;
+    --background-color-darker: #000;
+    --background-color-light: #fff;
+    --background-color-purple: #8781c5;
+    --color-light-one: #fff;
+    --color-light-two: rgb(187, 187, 187);
+    --color-light-three: #eee;
+    --color-light-four: #b6b6b6;
+    --color-dark-one: #000000;
+    --color-purple-one: #8781c5;
 
     /*========== Font and typography ==========*/
     --body-font: 'Roboto Mono', sans-serif;
@@ -18,7 +28,7 @@
 
 body {
     font-family: var(--body-font);
-    background: #0a081f;
+    background: var(--background-color-dark);
 }
 
 img {
@@ -33,7 +43,7 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 480px;
-    background: #fff;
+    background: var(--background-color-light);
     border-radius: 4px;
     overflow: hidden;
     min-height: 480px;
@@ -50,7 +60,7 @@ img {
     top: 0;
     width: 480px;
     transform: translateX(-200%);
-    background: #8781c5;
+    background: var(--background-color-purple);
     border-radius: 4px;
     height: 100%;
     display: flex;
@@ -78,7 +88,7 @@ img {
     margin-top: 10px;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: var(--background-color-light);
     transform: rotate(45deg);
     position: relative;
 }
@@ -88,7 +98,7 @@ img {
     display: block;
     width: 22px;
     height: 2px;
-    background: #fff;
+    background: var(--background-color-light);
     transform: rotate(-90deg);
     position: absolute;
     top: 0;
@@ -107,8 +117,8 @@ img {
 
 .form-input {
     border: none;
-    border-bottom: 2px solid #eee;
-    color: #fff;
+    border-bottom: 2px solid var(--color-light-three);
+    color: var(--background-color-light);
     background: transparent;
     outline: none;
     font-size: 19px;
@@ -117,8 +127,8 @@ img {
 }
 
 .form-submit {
-    background: #000;
-    color: #fff;
+    background: var(--background-color-darker);
+    color: var(--color-light-one);
     width: 18%;
     cursor: pointer;
     border: none;
@@ -127,7 +137,7 @@ img {
 }
 
 .form-input::placeholder {
-    color: rgb(187, 187, 187);
+    color: var(--color-light-two);
 }
 
 .loader {
@@ -178,16 +188,16 @@ img {
 .city-subtitle {
     font-size: 15px;
     line-height: 18px;
-    color: #ffffff;
+    color: var(--color-light-one);
 }
 
 .city-title {
-    background: #8781c5;
+    background: var(--color-purple-one);
     border-radius: 8px;
     font-weight: 700;
     font-size: 35px;
     line-height: 41px;
-    color: #ffffff;
+    color: var(--color-light-one);
     padding: 1px 8px;
     margin-top: 6px;
     cursor: pointer;
@@ -201,21 +211,21 @@ img {
 .city-info__subtitle {
     font-size: 13px;
     line-height: 15px;
-    color: #ffffff;
+    color: var(--color-light-one);
 }
 
 .city-info__title {
     font-weight: 500;
     font-size: 53px;
     line-height: 77px;
-    color: #ffffff;
+    color: var(--color-light-one);
 }
 
 .description {
     font-weight: 500;
     font-size: 25px;
     line-height: 36px;
-    color: #ffffff;
+    color: var(--color-light-one);
 }
 
 .top-right {
@@ -242,7 +252,7 @@ img {
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
-    color: #000000;
+    color: var(--color-dark-one);
 }
 
 .property-info__description {
@@ -250,7 +260,7 @@ img {
     font-size: 12px;
     line-height: 12px;
     text-transform: uppercase;
-    color: #b6b6b6;
+    color: var(--color-light-four);
     margin-top: 3px;
 }
 
@@ -264,4 +274,3 @@ img {
     row-gap: 20px;
     justify-content: space-between;
 }
-
