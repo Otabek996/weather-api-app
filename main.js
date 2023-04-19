@@ -25,7 +25,8 @@ let store = {
 
 const fetchData = async () => {
     try {
-        const result = await fetch(`${link}&q=${store.city}&aqi=no`);
+        const query = localStorage.getItem("query") || store.city;
+        const result = await fetch(`${link}&q=${query}&aqi=no`);
         const data = await result.json();
     
         const {
@@ -39,13 +40,15 @@ const fetchData = async () => {
                         condition: { text },
                         wind_kph: windKph
                     },
-            location: { localtime },
+            location: { localtime,
+                        name },
         } = data;
     
         store = {
             ...store,
             tempC,
             localtime,
+            city: name,
             isDay,
             text,
             properties: {
@@ -81,8 +84,6 @@ const fetchData = async () => {
                 },
             }
         };
-    
-        console.log('data', data);
     
         renderComponent();   
     } catch (err) {
@@ -181,9 +182,11 @@ const handleInput = (e) => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
+    const value = store.city;
 
-    if (!store.city) return null;
+    if (!value) return null;
 
+    localStorage.setItem("query", value);
     fetchData();
     togglePopupClass();
 };
